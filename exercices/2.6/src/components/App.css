@@ -1,0 +1,11 @@
+.page-content {
+  height: 100vh;
+  background-color: blanchedalmond;
+  padding: 1rem;
+  
+   @media screen and (min-width: 800px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

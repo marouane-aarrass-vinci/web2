@@ -1,0 +1,28 @@
+GET http://localhost:3000/films
+
+
+//get a film with id
+###
+GET http://localhost:3000/films/2
+
+###
+GET http://localhost:3000/films?minimum-duration=140
+
+###
+GET http://localhost:3000/films?minimum-duration=1
+
+###
+GET http://localhost:3000/films?minimum-duration=151
+
+###
+POST http://localhost:3000/films
+Content-Type: application/json
+
+{
+  "title": "Interstellar",
+  "director": "Christopher Nolan",
+  "duration": 169,
+  "budget": 165000000,
+  "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+  "imageUrl": "https://example.com/interstellar.jpg"
+}
