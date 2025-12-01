@@ -5,17 +5,19 @@ interface movieItemProps{
     director:string;
     description:string;
 }
+function MovieItem({title, director, description}: movieItemProps){
+    const [showDescription, setShowDescription] = useState(false);
 
-function MovieItem({title,director,description}:movieItemProps){
-    const [showDescription,setShowDescription]= useState(false);
-
-    return(
-        <div onClick={()=>setShowDescription(!showDescription)}>
-            <h3>{title}</h3>
-            <p>{director}</p>
+    return (
+        <div >
+            <p onClick={() => setShowDescription(!showDescription)}>
+               <strong>{title}</strong> 
+            </p>
+            <p> Realisateur : {director}</p>
             {showDescription && <p>{description}</p>}
         </div>
     );
 }
+
 
 export default MovieItem
