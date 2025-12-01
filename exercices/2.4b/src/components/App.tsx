@@ -1,5 +1,5 @@
 
-import { User } from "../types";
+import type{ User } from "../types";
 import UserCard from "./UserCard";
 
 const users:User[]=[

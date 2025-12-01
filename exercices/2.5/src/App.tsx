@@ -1,8 +1,9 @@
 
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
 import ClickCounter from './ClickCounter'
+import "./App.css";
+
 
 
 
@@ -18,7 +19,9 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
+
       <h1> vite + react</h1>
+      
       <div className="card">
         <ClickCounter title='jsp'
         message='You are a master in the art of clicking'
