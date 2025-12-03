@@ -1,13 +1,11 @@
-import  { useState } from "react";
-import type { SyntheticEvent } from "react";
+import {  type  SyntheticEvent, useState } from "react";
+import { Box, Button, Container, TextField } from "@mui/material";
 import type { Movie } from "../types";
-import "./AddMovieForm.css";
 
 interface AddMovieFormProps {
   onMovieAdded: (movie: Movie) => void;
 }
 
-//onmovieadded sert a envoyer le nouveau film a add au parent
 const AddMovieForm = ({ onMovieAdded }: AddMovieFormProps) => {
   const [title, setTitle] = useState("");
   const [director, setDirector] = useState("");
@@ -26,63 +24,71 @@ const AddMovieForm = ({ onMovieAdded }: AddMovieFormProps) => {
     setDescription("");
     setBudget(0);
   };
-
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>Titre :</label>
-        <input
-          type="text"
-          value={title}
-          //a chaque fois qu'on ecrit, title prends la valeur du input grace a la methode setTitle  
-          //OnChange detecte qu'un event arrive dans le code et avec e.target.value on recupere la valeur de celui ci
-          onChange={(e) => setTitle(e.target.value)}
-          required
-        />
-      </div>
-      <div>
-        <label>Réalisateur :</label>
-        <input
-          type="text"
-          value={director}
-          onChange={(e) => setDirector(e.target.value)}
-          required
-        />
-      </div>
-      <div>
-        <label>Durée :</label>
-        <input
-          type="number"
-          value={duration}
-          onChange={(e) => setDuration(parseInt(e.target.value))}
-          required
-        />
-      </div>
-      <div>
-        <label>URL de l'image :</label>
-        <input
-          type="text"
-          value={imageUrl}
-          onChange={(e) => setImageUrl(e.target.value)}
-        />
-      </div>
-      <div>
-        <label>Description :</label>
-        <textarea
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-      </div>
-      <div>
-        <label>Budget:</label>
-            <input
+    <Container sx={{ paddingTop: "2rem", maxWidth: "600px" }}>
+      <form onSubmit={handleSubmit}>
+        <Box sx={{ marginBottom: 2 }}>
+          <TextField
+            label="Titre :"
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            required
+            fullWidth
+          />
+        </Box>
+        <Box sx={{ marginBottom: 2 }}>
+          <TextField
+            label="Réalisateur :"
+            type="text"
+            value={director}
+            onChange={(e) => setDirector(e.target.value)}
+            required
+            fullWidth
+          />
+        </Box>
+        <Box sx={{ marginBottom: 2 }}>
+          <TextField
+            label="Durée :"
             type="number"
-            value={budget}
-            onChange={(e)=> setBudget(parseInt(e.target.value))}
-            />
-      </div>
-      <button type="submit">Ajouter</button>
-     </form>
+            value={duration ? duration : ""}
+            onChange={(e) => setDuration(parseInt(e.target.value))}
+            required
+            fullWidth
+          />
+        </Box>
+        <Box sx={{ marginBottom: 2 }}>
+          <TextField
+            label="URL de l'image :"
+            type="text"
+            value={imageUrl}
+            onChange={(e) => setImageUrl(e.target.value)}
+            fullWidth
+          />
+        </Box>
+        <Box sx={{ marginBottom: 2 }}>
+          <TextField
+            label="Description :"
+            type="text"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            fullWidth
+          />
+        </Box>
+        <Box sx={{ marginBottom: 2 }}>
+          <TextField
+            label="Budget :"
+            type="number"
+            value={budget ? budget : ""}
+            onChange={(e) => setBudget(parseInt(e.target.value))}
+            fullWidth
+          />
+        </Box>
+        <Button type="submit" variant="contained" color="primary">
+          Ajouter
+        </Button>
+      </form>
+    </Container>
   );
 };
 

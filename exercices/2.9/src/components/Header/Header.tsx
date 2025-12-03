@@ -1,16 +1,27 @@
-import "./Header.css";
-interface HeaderProps{
-    urlLogo:string;
-    children:React.ReactNode;
+// import "./Header.css";
+
+import { Box, useTheme } from "@mui/material";
+
+interface HeaderProps {
+  urlLogo: string;
+  children: React.ReactNode;
 }
 
-const Header=(props:HeaderProps)=>{
-    return(
-        <footer className="header">
-            <img src={props.urlLogo} alt="logo" className="logo"/>
-            <div>{props.children}</div>
-        </footer>
-    );
+const Header = (props: HeaderProps) => {
+  const theme = useTheme();
+  return (
+    <Box
+      component="header"
+      sx={{
+        backgroundColor: theme.palette.primary.dark,
+        color: theme.palette.primary.contrastText,
+      }}
+    >
+      <Box component="img" src={props.urlLogo} alt="logo" sx={{ height: 50 }} />
+
+      <div>{props.children}</div>
+    </Box>
+  );
 };
 
 export default Header;

@@ -1,5 +1,12 @@
+import {
+  Box,
+  Card,
+  CardContent,
+  CardHeader,
+  CardMedia,
+  Typography,
+} from "@mui/material";
 import type { Movie } from "../../types";
-import "./MovieCard.css"
 
 interface MovieCardProps {
   movie: Movie;
@@ -7,36 +14,85 @@ interface MovieCardProps {
 
 const MovieCard = ({ movie }: MovieCardProps) => {
   return (
-    <div className="card">
-      <div className="card-body">
-        <h3 className="card-title">{movie.title}</h3>
-        {movie.imageUrl && (
-          <img
-            src={movie.imageUrl}
-            className="card-img-top"
-            alt={movie.title}
-          />
-        )}
-        <p className="card-text">
-          <strong>Réalisateur:</strong> {movie.director}
-        </p>
-        <p className="card-text">
-          <strong>Durée :</strong> {movie.duration} minutes
-        </p>
+    <Card variant="outlined" sx={{ width: "18rem" }}>
+      <CardHeader title={movie.title}></CardHeader>
+      {movie.imageUrl && (
+        <CardMedia
+          component="img"
+          sx={{ width: 150, marginLeft: "1rem" }}
+          image={movie.imageUrl}
+          alt={movie.title}
+        />
+      )}
+      <CardContent>
+        <Box>
+          <Typography variant="h6" display="inline">
+            Réalisateur :
+          </Typography>
+          <Typography
+            display="inline"
+            sx={{
+              fontWeight: "light",
+              fontStyle: "italic",
+              color: "text.secondary",
+            }}
+          >
+            {` ${movie.director}`}
+          </Typography>
+        </Box>
+
+        <Box>
+          <Typography variant="h6" display="inline">
+            Durée :
+          </Typography>
+          <Typography
+            display="inline"
+            sx={{
+              fontWeight: "light",
+              fontStyle: "italic",
+              color: "text.secondary",
+            }}
+          >
+            {` ${movie.duration} minutes`}
+          </Typography>
+        </Box>
         {movie.budget && (
-          <p className="card-text">
-            <strong>Budget :</strong> {movie.budget} millions de dollars
-          </p>
+          <Box>
+            <Typography variant="h6" display="inline">
+              Budget :
+            </Typography>
+            <Typography
+              display="inline"
+              sx={{
+                fontWeight: "light",
+                fontStyle: "italic",
+                color: "text.secondary",
+              }}
+            >
+              {` ${movie.budget} millions de dollars`}
+            </Typography>
+          </Box>
         )}
         {movie.description && (
-          <p className="card-text">
-            <strong>Description :</strong> {movie.description}
-          </p>
+          <Box>
+            <Typography variant="h6" display="inline">
+              Description :
+            </Typography>
+            <Typography
+              display="inline"
+              sx={{
+                fontWeight: "light",
+                fontStyle: "italic",
+                color: "text.secondary",
+              }}
+            >
+              {` ${movie.description}`}
+            </Typography>
+          </Box>
         )}
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 };
-
 
 export default MovieCard;

@@ -1,21 +1,22 @@
-import MovieCard from "../MovieCard/MovieCard";
+import { Box } from "@mui/material";
 import type { Movie } from "../../types";
-import "./MovieListView.css";
+import MovieCard from "../MovieCard/MovieCard";
 
-interface MovieListViewProps{
-    movies:Movie[];
+interface MovieListViewProps {
+  movies: Movie[];
 }
 
-const MovieListView =({movies}:MovieListViewProps)=>{
-    return(
-       <div >
-      <ul className="movie-list-view">
-        {movies.map((movie) => (
-          <MovieCard key={movie.title} movie={movie} />
-        ))}
-      </ul>
-    </div>
-    );
+const MovieListView = ({ movies }: MovieListViewProps) => {
+  return (
+    <Box
+      display="flex"
+      sx={{ flexDirection: "row", flexWrap: "wrap", gap: "1rem" }}
+    >
+      {movies.map((movie) => (
+        <MovieCard key={movie.title} movie={movie} />
+      ))}
+    </Box>
+  );
 };
 
 export default MovieListView;
