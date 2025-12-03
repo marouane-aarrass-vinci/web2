@@ -7,6 +7,7 @@ interface AddMovieFormProps {
   onMovieAdded: (movie: Movie) => void;
 }
 
+//onmovieadded sert a envoyer le nouveau film a add au parent
 const AddMovieForm = ({ onMovieAdded }: AddMovieFormProps) => {
   const [title, setTitle] = useState("");
   const [director, setDirector] = useState("");
@@ -25,6 +26,7 @@ const AddMovieForm = ({ onMovieAdded }: AddMovieFormProps) => {
     setDescription("");
     setBudget(0);
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <div>
@@ -32,6 +34,8 @@ const AddMovieForm = ({ onMovieAdded }: AddMovieFormProps) => {
         <input
           type="text"
           value={title}
+          //a chaque fois qu'on ecrit, title prends la valeur du input grace a la methode setTitle  
+          //OnChange detecte qu'un event arrive dans le code et avec e.target.value on recupere la valeur de celui ci
           onChange={(e) => setTitle(e.target.value)}
           required
         />

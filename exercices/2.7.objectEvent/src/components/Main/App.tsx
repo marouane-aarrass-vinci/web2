@@ -53,6 +53,7 @@ const defaultMovies:Movie[]=[
 
 const [movies,setMovies]= useState(defaultMovies);
 
+
 const onMovieAdded=(newMovie:Movie)=>{
   console.log("Movie to add:",newMovie);
   setMovies([...movies,newMovie]);
