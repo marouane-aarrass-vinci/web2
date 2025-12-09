@@ -25,9 +25,9 @@ const AddMovieForm = ({ onMovieAdded }: AddMovieFormProps) => {
     setBudget(0);
   };
   return (
-    <Container sx={{ paddingTop: "2rem", maxWidth: "600px" }}>
+    <Container sx={{ paddingTop: "5rem", maxWidth: "600px" }}>
       <form onSubmit={handleSubmit}>
-        <Box sx={{ marginBottom: 2 }}>
+        <Box sx={{ marginBottom: 2}}>
           <TextField
             label="Titre :"
             type="text"

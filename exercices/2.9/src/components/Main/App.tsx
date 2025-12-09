@@ -73,7 +73,7 @@ const App = () => {
         <Typography variant="h1">Tous sur les films</Typography>
       </Header>
 
-      <Box component="main" sx={{ padding: "1rem", flex: "1" }}>
+      <Box component="main" sx={{ padding: "3rem", flex: "1" }}>
         <PageTitle title="My favorite movies" />
 
         <MovieListView movies={movies} />
