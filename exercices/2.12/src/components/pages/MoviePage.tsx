@@ -5,6 +5,7 @@ import MovieCard from "../MovieCard/MovieCard";
 const MoviePage = () => {
     const {movies} : MovieContext = useOutletContext();
 
+    //usematch recolte les parametres dynamique construit avec link ds homepage (l'id)
     const match = useMatch("/movies/:id");
     const movieId = Number(match?.params.id);
     if (isNaN(movieId)) return <p>Movie not found</p>;
