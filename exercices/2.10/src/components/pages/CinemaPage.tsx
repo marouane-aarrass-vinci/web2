@@ -1,6 +1,6 @@
 import { Movie } from "../../types";
-import Cinema from "../Cinema";
-import PageTitle from "../PageTitle";
+import Cinema from "../Cinema/Cinema";
+import PageTitle from "../PageTitle/PageTitle";
 
 const CinemaPage = () => {
   const pageTitle = "Informations sur les films dans les cinémas";

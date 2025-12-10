@@ -1,7 +1,7 @@
 import { useState } from "react";
-import AddMovieForm from "../AddMovieForm";
-import MovieListView from "../MovieListView";
-import PageTitle from "../PageTitle";
+import AddMovieForm from "../AddMovieForm/AddMovieForm";
+import MovieListView from "../MostListView/MovieListView";
+import PageTitle from "../PageTitle/PageTitle";
 import { Movie } from "../../types";
 
 const MovieListPage = () => {

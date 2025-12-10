@@ -4,7 +4,7 @@ import "./index.css";
 
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import HomePage from "./components/pages/HomePage";
-import App from "./components/App";
+import App from "./components/App/App";
 import CinemaPage from "./components/pages/CinemaPage";
 import MovieListPage from "./components/pages/MovieListPage";
 
