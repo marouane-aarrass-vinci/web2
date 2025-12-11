@@ -25,6 +25,8 @@ const RandomDog = () => {
     fetchDogImage();
   }, []);
 
+
+  
   if (!dog) {
     return <p>Loading...</p>;
   }

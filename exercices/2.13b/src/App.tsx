@@ -1,10 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import RandomDog from "./RandomDog";
 
-interface Dog {
-  message: string;
-  status: string;
-}
 
 const App = () => {
   const [refresh, setRefresh] = useState(false);
@@ -18,11 +14,12 @@ const App = () => {
       </div>
 
       <button
+      //quand un state react change de valeur, tout l'app se relance et et ca permet qu'a chaque clique ca relance
         onClick={() => setRefresh(!refresh)}
         style={{
           marginTop: "20px",
           padding: "10px 20px",
-          fontSize: "1em",
+          fontSize: "2em",
           cursor: "pointer",
         }}
       >
