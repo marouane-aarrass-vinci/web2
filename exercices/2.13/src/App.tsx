@@ -19,7 +19,7 @@ const App = () => {
   /**
    * Mon useEffect contient deux arguments
    * 1er une fonction (fetch et deux then) : ce sont les fonctions que react executera apres avoir affiché mon composant
-   * le code de useEffect ne s'execute pas pendant le rendu, seulement apres que react ait fini d'afficher la page
+   * le code de useEffect ne s'execute pas pendant le rendu, seulement apres que react ait fini d'afficher le composant
    * 
    * 2e un tab de dependances
    * Exécute la fonction du useEffect une seule fois, juste après le premier affichage du composant
